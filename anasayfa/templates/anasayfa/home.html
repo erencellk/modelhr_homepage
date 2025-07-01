@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anasayfa Model A.C</title>
+    <link rel="icon" type="image/png"  href="/media/modelac_favicon.png">
+    <link rel="stylesheet" href="{% static 'anasayfa/css/style.css' %}">
+
+</head>
+<body>
+
+<div class="navbar-items">
+
+    <div class="logo-item">
+        <img id="mdl-logo" src="/media/MDL.jpg" alt="Model İnsan Kaynakları Logo">
+        <span style="font-weight: bold" class="model-yazi">Model İnsan Kaynakları</span>
+
+    </div>
+
+    <div class="info-item">
+        <a href="#">AnaSayfa</a>
+        <a href="#hakkimizda">Hakkımızda</a>
+        <a href="#iletisim">İletişim</a>
+        <a href="#nedenbiz">Neden Biz?</a>
+        <a href="#referanslar">Referanslar</a>
+        <a href="#sss">Sıkça Sorulan Sorular</a>
+        <a href="#girişyap">Giriş Yap</a>
+    </div>
+
+
+
+    
+</div>
+
+<div class="info-box-container">
+    {% for box in info_boxes %}
+        <div class="info-box">
+            <img src="{{ box.icon.url }}" alt="{{ box.title }}">
+            <h3>{{ box.title }}</h3>
+            <p>{{ box.description }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+
+
+<script src="{%  static 'anasayfa/js/app.js' %}"></script>
+</body>
+
+</html>
