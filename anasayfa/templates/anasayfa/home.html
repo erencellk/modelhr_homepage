@@ -4,36 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <title>Anasayfa Model A.C</title>
-    <link rel="icon" type="image/png"  href="/media/modelac_favicon.png">
+    <link rel="icon" type="image/png" href="/media/modelac_favicon.png">
     <link rel="stylesheet" href="{% static 'anasayfa/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap">
+
+
+
 
 </head>
 <body>
 
-<div class="navbar-items">
-
+<div class="navbar-items" id="anasayfa">
     <div class="logo-item">
         <img id="mdl-logo" src="/media/MDL.jpg" alt="Model İnsan Kaynakları Logo">
-        <span style="font-weight: bold" class="model-yazi">Model İnsan Kaynakları</span>
-
     </div>
 
     <div class="info-item">
-        <a href="#">AnaSayfa</a>
-        <a href="#hakkimizda">Hakkımızda</a>
-        <a href="#iletisim">İletişim</a>
-        <a href="#nedenbiz">Neden Biz?</a>
-        <a href="#referanslar">Referanslar</a>
-        <a href="#sss">Sıkça Sorulan Sorular</a>
-        <a href="#girişyap">Giriş Yap</a>
+        <a href="#anasayfa" class="smooth-scroll">
+            <i class="fas fa-home"></i> AnaSayfa
+        </a>
+        <a href="#hakkimizda" class="smooth-scroll">
+            <i class="fas fa-info-circle"></i> Hakkımızda
+        </a>
+        <a href="#iletisim" class="smooth-scroll">
+            <i class="fas fa-phone-alt"></i> İletişim
+        </a>
+        <a href="#nedenbiz" class="smooth-scroll">
+            <i class="fas fa-question-circle"></i> Neden Biz?
+        </a>
+        <a href="#referanslar" class="smooth-scroll">
+            <i class="fas fa-users"></i> Referanslar
+        </a>
+        <a href="#sss" class="smooth-scroll">
+            <i class="fas fa-comments"></i> Sıkça Sorulan Sorular
+        </a>
+        <a href="#girişyap">
+            <i class="fas fa-sign-in-alt"></i> Giriş Yap
+        </a>
     </div>
 
-
-
-    
+    <div class="go-top">
+    <a href="#anasayfa" id="go-top-btn" class="smooth-scroll">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 </div>
 
-<div class="info-box-container">
+</div>
+
+<br><br><br><br><br>
+<div class="info-box-container" id="hakkimizda">
+    <h1 style="text-align: center; margin-bottom:50px">Hakkımızda</h1>
+    <div class="video-kismi">
+        <video width="1000" height="600" controls preload="auto">
+            <source src="/media/Video%202%20-%20Trim.mp4" type="video/mp4">
+        </video>
+        <div class="konusmaci-bilgisi">
+        <span class="konusmaci-icon">🎙️</span>
+        <span class="konusmaci-ad">Bilgilendirme:Hüseyin Doğan</span>
+    </div>
+    </div>
     {% for box in info_boxes %}
         <div class="info-box">
             <img src="{{ box.icon.url }}" alt="{{ box.title }}">
@@ -43,9 +73,14 @@
     {% endfor %}
 </div>
 
+<hr>
+<div class="iletisim" id="iletisim">
 
 
-<script src="{%  static 'anasayfa/js/app.js' %}"></script>
+</div>
+
+
+<script src="{% static 'anasayfa/js/app.js' %}"></script>
 </body>
 
 </html>
