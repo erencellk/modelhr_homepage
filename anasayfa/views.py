@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from anasayfa.models import InfoBox
+from anasayfa.models import InfoBox , RecruitmentStep
 
 
 def home(request):
@@ -10,4 +10,14 @@ def home(request):
 
 def home_view(request):
    info_boxes = InfoBox.objects.all()
-   return render(request , 'anasayfa/home.html' , {'info_boxes':info_boxes})
+   steps = RecruitmentStep.objects.all()
+   return render(request , 'anasayfa/home.html' , {
+       'info_boxes':info_boxes,
+       'recruitment_steps':steps
+   })
+
+
+
+def recruitment_view(request):
+    steps = RecruitmentStep.objects.all()
+    return render(request , 'anasayfa/recruitment.html' , {'recruitment_steps':steps})
