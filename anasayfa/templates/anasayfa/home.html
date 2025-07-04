@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
 
 </head>
 <body>
@@ -24,10 +24,7 @@
             <i class="fas fa-home"></i> AnaSayfa
         </a>
         <a href="#hakkimizda" class="smooth-scroll">
-            <i class="fas fa-info-circle"></i> Hakkımızda
-        </a>
-        <a href="#iletisim" class="smooth-scroll">
-            <i class="fas fa-phone-alt"></i> İletişim
+            <i class="fas fa-info-circle"></i> Online Video Sürecimiz
         </a>
         <a href="#nedenbiz" class="smooth-scroll">
             <i class="fas fa-question-circle"></i> Neden Biz?
@@ -37,6 +34,9 @@
         </a>
         <a href="#sss" class="smooth-scroll">
             <i class="fas fa-comments"></i> Sıkça Sorulan Sorular
+        </a>
+        <a href="#iletisim" class="smooth-scroll">
+            <i class="fas fa-phone-alt"></i> İletişim
         </a>
         <a href="#girişyap">
             <i class="fas fa-sign-in-alt"></i> Giriş Yap
@@ -52,7 +52,7 @@
 
 <br><br><br><br><br>
 <div class="info-box-container" id="hakkimizda" data-aos="fade-up">
-    <h1 style="text-align: center; margin-bottom:50px" data-aos="fade-down">Hakkımızda</h1>
+    <h1 style="text-align: center; margin-bottom:50px" data-aos="fade-down">Online Video Sürecimiz Hakkında</h1>
     <div class="video-kismi" data-aos="zoom-in">
         <video width="1000" height="600" controls preload="auto">
             <source src="/media/Video%202%20-%20Trim.mp4" type="video/mp4">
@@ -63,11 +63,12 @@
         </div>
     </div>
     <div class="model-hedef" data-aos="fade-up">
-        <h3><i class="fas fa-microscope"></i> Bilimsel Yöntemlerle Yeteneği Keşfedin, Potansiyeli Açığa Çıkarın</h3>
-        <p>Model İnsan Kaynakları olarak doğru işe alım, stratejik yetenek yönetimi ve kariyer planlamasında bilimsel ve
-            objektif ölçüm yöntemleriyle yanınızdayız.</p>
+        <h3><i class="fas fa-laptop-code"></i>Online Eğitimle Gelişimi Kolaylaştırın, Öğrenmeyi Dijitalleştirin</h3>
+        <p>Model İnsan Kaynakları olarak, kurum içi eğitim süreçlerinizi çağın gerekliliklerine uygun hale getiriyoruz.
+            Online video eğitim platformumuz sayesinde çalışanlarınıza diledikleri yerden, diledikleri zamanda
+            erişebilecekleri esnek ve etkili bir öğrenme ortamı sunuyoruz.</p>
         <br>
-        <h3 style="margin-right: 100px">İşe Alım Süreci Nasıl İşler?</h3>
+        <h3 style="margin-right: 100px">Online Video Eğitim Sürecimiz Nasıl İşler?</h3>
         <section class="step-container" data-aos="fade-up" data-aos-delay="100">
             {% for step in recruitment_steps %}
                 <div class="step" style="--color:{{ step.color }}" data-aos="zoom-in"
@@ -101,9 +102,11 @@
 </div>
 
 <hr>
-<div class="iletisim" id="iletisim" data-aos="fade-up">
-    asdasd
+
+<div class="neden-biz">
+
 </div>
+
 
 <script src="{% static 'anasayfa/js/app.js' %}"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
