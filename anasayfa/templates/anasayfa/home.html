@@ -8,19 +8,18 @@
     <link rel="stylesheet" href="{% static 'anasayfa/css/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap">
-
-
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 </head>
 <body>
 
-<div class="navbar-items" id="anasayfa">
-    <div class="logo-item">
+<div class="navbar-items" id="anasayfa" data-aos="fade-down">
+    <div class="logo-item" data-aos="zoom-in" data-aos-delay="100">
         <img id="mdl-logo" src="/media/MDL.jpg" alt="Model İnsan Kaynakları Logo">
     </div>
 
-    <div class="info-item">
+    <div class="info-item" data-aos="fade-left" data-aos-delay="200">
         <a href="#anasayfa" class="smooth-scroll">
             <i class="fas fa-home"></i> AnaSayfa
         </a>
@@ -44,43 +43,75 @@
         </a>
     </div>
 
-    <div class="go-top">
-    <a href="#anasayfa" id="go-top-btn" class="smooth-scroll">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-</div>
-
+    <div class="go-top" data-aos="fade-up" data-aos-delay="300">
+        <a href="#anasayfa" id="go-top-btn" class="smooth-scroll">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
 </div>
 
 <br><br><br><br><br>
-<div class="info-box-container" id="hakkimizda">
-    <h1 style="text-align: center; margin-bottom:50px">Hakkımızda</h1>
-    <div class="video-kismi">
+<div class="info-box-container" id="hakkimizda" data-aos="fade-up">
+    <h1 style="text-align: center; margin-bottom:50px" data-aos="fade-down">Hakkımızda</h1>
+    <div class="video-kismi" data-aos="zoom-in">
         <video width="1000" height="600" controls preload="auto">
             <source src="/media/Video%202%20-%20Trim.mp4" type="video/mp4">
         </video>
-        <div class="konusmaci-bilgisi">
-        <span class="konusmaci-icon">🎙️</span>
-        <span class="konusmaci-ad">Bilgilendirme:Hüseyin Doğan</span>
-    </div>
-    </div>
-    {% for box in info_boxes %}
-        <div class="info-box">
-            <img src="{{ box.icon.url }}" alt="{{ box.title }}">
-            <h3>{{ box.title }}</h3>
-            <p>{{ box.description }}</p>
+        <div class="konusmaci-bilgisi" data-aos="fade-right" data-aos-delay="100">
+            <span class="konusmaci-icon">🎙️</span>
+            <span class="konusmaci-ad">Bilgilendirme:Hüseyin Doğan</span>
         </div>
-    {% endfor %}
+    </div>
+    <div class="model-hedef" data-aos="fade-up">
+        <h3><i class="fas fa-microscope"></i> Bilimsel Yöntemlerle Yeteneği Keşfedin, Potansiyeli Açığa Çıkarın</h3>
+        <p>Model İnsan Kaynakları olarak doğru işe alım, stratejik yetenek yönetimi ve kariyer planlamasında bilimsel ve
+            objektif ölçüm yöntemleriyle yanınızdayız.</p>
+        <br>
+        <h3 style="margin-right: 100px">İşe Alım Süreci Nasıl İşler?</h3>
+        <section class="step-container" data-aos="fade-up" data-aos-delay="100">
+            {% for step in recruitment_steps %}
+                <div class="step" style="--color:{{ step.color }}" data-aos="zoom-in"
+                     data-aos-delay="{{ forloop.counter|add:1 }}00">
+                    <div class="circle" onclick="toggleStep(this)">
+                        <i class="{{ step.icon }}"></i>
+                        {{ step.step_number|stringformat:"02d" }}
+                    </div>
+                    <p class="title">{{ step.title }}</p>
+                    <div class="arrow-box">
+                        <div class="arrow" style="display: none; background-color: var(--color);"></div>
+                        <div class="hover-card" style="display: none;">
+                            <p>{{ step.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </section>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="kutular" data-aos="fade-up">
+        {% for box in info_boxes %}
+            <div class="info-box" data-aos="fade-up" data-aos-delay="{{ forloop.counter|add:1 }}00">
+                <img src="{{ box.icon.url }}" alt="{{ box.title }}">
+                <h3>{{ box.title }}</h3>
+                <p>{{ box.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
 </div>
 
 <hr>
-<div class="iletisim" id="iletisim">
-
-
+<div class="iletisim" id="iletisim" data-aos="fade-up">
+    asdasd
 </div>
 
-
 <script src="{% static 'anasayfa/js/app.js' %}"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+</script>
 </body>
-
 </html>
