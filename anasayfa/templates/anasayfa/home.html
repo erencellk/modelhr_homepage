@@ -19,15 +19,18 @@
         <img id="mdl-logo" src="/media/MDL.jpg" alt="Model İnsan Kaynakları Logo">
     </div>
 
-    <div class="info-item" data-aos="fade-left" data-aos-delay="200">
+    <div class="info-item" data-aos="fade-left" data-aos-delay="200" style="margin-right: 35px">
         <a href="#anasayfa" class="smooth-scroll">
             <i class="fas fa-home"></i> AnaSayfa
         </a>
         <a href="#hakkimizda" class="smooth-scroll">
-            <i class="fas fa-info-circle"></i> Online Video Sürecimiz
+            <i class="fas fa-info-circle"></i> Hakkımızda
         </a>
         <a href="#nedenbiz" class="smooth-scroll">
-            <i class="fas fa-question-circle"></i> Neden Biz?
+            <i class="fas fa-question-circle"></i> Biz Kimiz?
+        </a>
+        <a href="#onlineegitim" class="smooth-scroll">
+            <i class="fas fa-chalkboard-teacher"></i> Online Eğitim
         </a>
         <a href="#referanslar" class="smooth-scroll">
             <i class="fas fa-users"></i> Referanslar
@@ -52,7 +55,7 @@
 
 <br><br><br><br><br>
 <div class="info-box-container" id="hakkimizda" data-aos="fade-up">
-    <h1 style="text-align: center; margin-bottom:50px" data-aos="fade-down">Online Video Sürecimiz Hakkında</h1>
+    <h1 style="text-align: center; margin-bottom:50px" data-aos="fade-down">Hakkımızda</h1>
     <div class="video-kismi" data-aos="zoom-in">
         <video width="1000" height="600" controls preload="auto">
             <source src="/media/Video%202%20-%20Trim.mp4" type="video/mp4">
@@ -61,15 +64,55 @@
             <span class="konusmaci-icon">🎙️</span>
             <span class="konusmaci-ad">Bilgilendirme:Hüseyin Doğan</span>
         </div>
+
+
+    </div>
+
+    <div class="hakkimizda-yazilari" data-aos="fade-up">
+        {% for section in sections %}
+            <div class="about-section">
+                <h2 style="color:#4B0082; font-size: 22px; font-weight: bold; margin-bottom: 10px;">
+                    {{ section.title }}
+                </h2>
+                <div style="line-height:1.7;color:#444;">
+                    {{ section.content|safe }}
+                </div>
+
+            </div>
+        {% endfor %}
+
+    </div>
+    <div class="bizkimiz">
+        {% for item in who_we_are %}
+            <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; max-width: 1200px; gap: 40px;">
+                <div style="flex: 1; min-width: 300px;padding: 20px">
+                    <h2 style="color: #4B0082; font-size: 26px; font-weight: 700; margin-bottom: 20px;">
+                        {{ item.title }}
+                    </h2>
+                    <div style="font-size: 16px; color: #333; line-height: 1.8;">
+                        {{ item.description|safe }}
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div style="flex: 1; min-width: 300px; text-align: center; padding: 20px;">
+                <img src="" alt="{{ item.title }}" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+            </div>
+        {% endfor %}
     </div>
     <div class="model-hedef" data-aos="fade-up">
-        <h3><i class="fas fa-laptop-code"></i>Online Eğitimle Gelişimi Kolaylaştırın, Öğrenmeyi Dijitalleştirin</h3>
-        <p>Model İnsan Kaynakları olarak, kurum içi eğitim süreçlerinizi çağın gerekliliklerine uygun hale getiriyoruz.
-            Online video eğitim platformumuz sayesinde çalışanlarınıza diledikleri yerden, diledikleri zamanda
-            erişebilecekleri esnek ve etkili bir öğrenme ortamı sunuyoruz.</p>
+        <h2 class="model-baslik">🌟 Model Human Resources Training Platformu ile Öğrenmeyi Kurumsal Güce
+            Dönüştürün🌟
+        </h2>
+        <p>İnsan kaynakları departmanları için sadece bir eğitim aracı değil, aynı zamanda stratejik bir gelişim çözümü
+            olan Model Platform, kurumunuzun dijital dönüşüm yolculuğunda güvenilir bir partnerdir.</p>
         <br>
-        <h3 style="margin-right: 100px">Online Video Eğitim Sürecimiz Nasıl İşler?</h3>
-        <section class="step-container" data-aos="fade-up" data-aos-delay="100">
+
+        <section class="step-container" data-aos="fade-up" data-aos-delay="100" style="margin-top: 237px;">
+            <h3 style="margin-right: 100px">Online Eğitim Sürecimiz</h3>
             {% for step in recruitment_steps %}
                 <div class="step" style="--color:{{ step.color }}" data-aos="zoom-in"
                      data-aos-delay="{{ forloop.counter|add:1 }}00">
@@ -89,6 +132,7 @@
         </section>
     </div>
 
+
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <div class="kutular" data-aos="fade-up">
         {% for box in info_boxes %}
@@ -103,7 +147,8 @@
 
 <hr>
 
-<div class="neden-biz">
+<div class="neden-biz" id="nedenbiz">
+
 
 </div>
 
